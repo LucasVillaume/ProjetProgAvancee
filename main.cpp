@@ -20,7 +20,7 @@ int main(){
                 switch(event.key.code){
                     
                     case(sf::Keyboard::Z):
-                        cube.deplacerCube(0,-1);
+                        cube.deplacerCube(0,-6);
                         break;
                         
                     case(sf::Keyboard::Q):
