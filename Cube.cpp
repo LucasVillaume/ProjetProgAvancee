@@ -74,15 +74,15 @@ bool Cube::estVivant() const{
 }
 
 void Cube::deplacerCube(int x, int y){
-    sprCube.move(x*vitesse,y*vitesse);
-    position.deplacer(x*vitesse,y*vitesse);
+    sprCube.move(x,y);
+    position.deplacer(x,y);
 }
 
 void Cube::chute(){
     while (dansAir()){
-        sprCube.move(0,gravite);
         position.deplacer(0,gravite);
     }
+    sprCube.setPosition(sf::Vector2f(getAbscisseCube(),getOrdonneeCube()));
     
     if (getOrdonneeCube() > 300){
         sprCube.setPosition(getAbscisseCube(),300);

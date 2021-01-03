@@ -3,12 +3,13 @@
 #include "Air.hpp"
 
 Air::Air(Point deb, Point fin): Plateforme(deb,fin){
-    if (!texturePlateforme.loadFromFile("../ressources/TextureAir.png")){
+    if (!texturePlateforme.loadFromFile("../ressources/TexturePlateforme/TextureAir.png")){
     }
     
     texturePlateforme.setSmooth(true);
     texturePlateforme.setRepeated(true);
     sprPlateforme.setTexture(texturePlateforme);
+    sprPlateforme.setOrigin(0,fin.getAbscisse()-deb.getAbscisse());
     sprPlateforme.setPosition(deb.getAbscisse(),deb.getOrdonnee());
     
     float x_lim = (fin.getAbscisse()-deb.getAbscisse())/100;
@@ -23,6 +24,7 @@ Air::Air(int x, int y, int x2, int y2): Plateforme(x,y,x2,y2){
     texturePlateforme.setSmooth(true);
     texturePlateforme.setRepeated(true);
     sprPlateforme.setTexture(texturePlateforme);
+    sprPlateforme.setOrigin(0,y2-y);
     sprPlateforme.setPosition(x,y);
     
     float x_lim = (x2-x)/100;   //x2-x: la largueur de la plateforme

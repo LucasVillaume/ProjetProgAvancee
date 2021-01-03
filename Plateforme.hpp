@@ -11,6 +11,8 @@ class Plateforme{
 	Plateforme(int x, int y, int x2, int y2);
 	void casser();
 	void reparer();
+	//Get/Set
+	sf::Sprite getSprite();
 	
 	protected:
 	Point hautGauche;

@@ -3,12 +3,13 @@
 #include "Sol.hpp"
 
 Sol::Sol(Point deb, Point fin): Plateforme(deb, fin){
-    if (!texturePlateforme.loadFromFile("../ressources/TextureSol.png")){
+    if (!texturePlateforme.loadFromFile("../ressources/TexturePlateforme/TextureSol.png")){
     }
     
     texturePlateforme.setSmooth(true);
     texturePlateforme.setRepeated(true);
     sprPlateforme.setTexture(texturePlateforme);
+    sprPlateforme.setOrigin(0,fin.getAbscisse()-deb.getAbscisse());
     sprPlateforme.setPosition(deb.getAbscisse(),deb.getOrdonnee());
     
     float x_lim = (fin.getAbscisse()-deb.getAbscisse())/100;
@@ -17,12 +18,13 @@ Sol::Sol(Point deb, Point fin): Plateforme(deb, fin){
 }
 
 Sol::Sol(int x, int y, int x2, int y2): Plateforme(x,y,x2,y2){
-    if (!texturePlateforme.loadFromFile("../ressources/TextureSol.png")){
+    if (!texturePlateforme.loadFromFile("../ressources/TexturePlateforme/TextureSol.png")){
     }
     
     texturePlateforme.setSmooth(true);
     texturePlateforme.setRepeated(true);
     sprPlateforme.setTexture(texturePlateforme);
+    sprPlateforme.setOrigin(0,0);
     sprPlateforme.setPosition(x,y);
     
     float x_lim = (x2-x)/100;   //x2-x: la largueur de la plateforme
